@@ -1,0 +1,27 @@
+
+<form [formGroup]="form">
+  <div class="form-group text-center">
+    <br><h5>Modifier Compte</h5>
+  </div>
+    <div class="form-group">
+      <h3>ID:</h3> <input   formControlName="id" class="form-control" value="test" [(ngModel)]="userObj.id">
+    </div>
+    <div class="form-group">
+   <h3> username:</h3> 
+   <input formControlName="username" class="form-control" [(ngModel)]="userObj.username" >
+  </div>
+    <div class="form-group"> 
+      <h3>password:</h3>
+      <input formControlName="password" class="form-control" [(ngModel)]="userObj.password">
+     </div>
+    <div class="form-group">
+      <h3> email:</h3>
+      <input formControlName="email" class="form-control" [(ngModel)]="userObj.email "> 
+    </div>
+    <div class="form-group">
+      <h3> role:</h3>
+      <input formControlName="role" class="form-control" [(ngModel)]="userObj.role"> 
+    </div>
+    
+    <button (click)="modifierUser(id.value,form.value)" class="btn btn-success" >SAVE</button>
+  </form>

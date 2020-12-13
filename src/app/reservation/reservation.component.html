@@ -1,0 +1,30 @@
+<app-accueil></app-accueil>
+<table class="table table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col"> ID USER </th> 
+            <th scope="col"> Nom </th>  
+            <th scope="col">Email </th> 
+            <th scope="col"> ID VOL </th>
+            <th scope="col"> Depart  </th> 
+            <th scope="col"> Destination </th>
+             <th scope="col"> Date de Depart </th>  
+            
+          
+        </tr>
+    </thead>
+    <tbody>
+<tr *ngFor="let re of detailReservations">
+    
+    <td>{{re['user'].id}}</td>
+    <td>{{re['user'].username}}</td>
+    <td>{{re['user'].email}}</td>
+    <td>{{re['vol'].id}}</td>
+    <td> {{re['vol'].depart}}</td>
+    <td>{{re['vol'].destination}}</td>
+    <td>  {{re['vol'].datedepart}}</td>
+
+   
+
+</tbody>
+</table>

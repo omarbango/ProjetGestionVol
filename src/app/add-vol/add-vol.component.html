@@ -1,0 +1,41 @@
+<app-accueil></app-accueil>
+
+<form [formGroup]="form"  >
+    <div class="container">
+      <div class="col-12">
+        <div class="form-group text-center">
+          <br><h5>Ajouter une vol</h5>
+        </div>
+  
+  
+        <div class="form-group">
+          <h3>ID:</h3>
+          <input class="form-control" formControlName="id" type="text" placeholder="id" >
+        </div>
+        <div class="form-group">
+          <h3>destination:</h3>
+          <input class="form-control" formControlName="destination" type="text" placeholder="destination" >
+        </div>
+        <div class="form-group">
+          <h3>depart:</h3>
+          <input class="form-control" formControlName="depart" type="text" placeholder="depart" >
+        </div>
+        <div class="form-group">
+          <h3>date de depart:</h3>
+          <input class="form-control" formControlName="datedepart" type="text" placeholder="datedepart" >
+        </div>
+        <div class="form-group">
+            <h3>prix:</h3>
+            <input class="form-control" formControlName="prix" type="text" placeholder="prix" >
+          </div>
+          <div class="form-group">
+            <h3>promotion:</h3>
+            <input class="form-control" formControlName="promotion" type="checkbox" >
+          </div>
+  
+  
+          <button   (click)="volservice.ajouter(form.value)" class="btn btn-success" >ajouter</button>
+      </div>
+    </div>
+  
+  </form>

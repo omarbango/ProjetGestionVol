@@ -1,0 +1,46 @@
+<app-accueil></app-accueil>
+<form class="example" action="action_page.php">
+    <input type="text"  [(ngModel)]="depart" (change)="chercher(depart,destination)" placeholder="Depart.." name="depart">
+    <input type="text"  [(ngModel)]="destination" (change)="chercher(depart,destination)" placeholder="Destination.." name="search">
+    <button (click)="chercher(depart,destination)"><i class="fa fa-search"></i></button>
+
+  </form>
+  <table class="table table-bordered">
+      <thead class="thead-dark">
+        <tr>
+            <th scope="col"> IDVol </th>   
+            <th scope="col"> Depart </th>  
+            <th scope="col"> Dstination </th>  
+            <th scope="col"> Date de départ </th>  
+            <th scope="col"> Prix</th>
+           
+            
+        </tr>
+      </thead>
+      <tbody>
+<tr *ngFor="let vol of listVols"   >
+  
+        <td >{{vol.id}}</td>
+        <td>{{vol. depart}}</td>
+        <td>{{vol. destination}}</td>
+        <td> {{vol. datedepart}}</td>
+        <td>{{vol. prix}}  <div *ngIf="promotion!=null && promotion[0]==vol.id && loggedUser.role=='Administrateur'">=> nouveau prix {{promotion[1]}}</div></td>
+        <br> 
+    
+   
+      
+        <td><button class="btn btn-success" (click)="reserver(loggedUser.id,vol.id)"> Reserver</button></td>
+       <td> <button class="btn btn-warning" (click)="goToModifier(vol.id)" *ngIf="loggedUser.role=='Administrateur'" >Modifier</button></td>
+
+       <td> <button *ngIf="vol.promotion && loggedUser.role=='Administrateur'" class="btn btn-warning" (click)="showPromo(vol)" >Promotion</button></td>
+
+
+   
+
+<td><app-promo [volInput]="volToShow" (promo)="onPromo($event)" *ngIf="showReservation && volToShow.id==vol.id"></app-promo></td>
+
+</tbody>
+</table>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/home']">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/addvol']" *ngIf="loggedUser.role=='Administrateur'" >Ajouter_vol</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  [routerLink]="['/listUser/user']" *ngIf="loggedUser.role=='Administrateur'">consulter_liste_clients</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  [routerLink]="['/reservation']"*ngIf="loggedUser.role=='Administrateur'">consulter Reservation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  [routerLink]="['/']">Déconnexion</a>
+        </li>
+        
+    
+      </ul>
+    </div>
+  </nav>
+  
+  
+  

@@ -1,0 +1,28 @@
+
+<form [formGroup]="form">
+  <div class="form-group text-center">
+    <br><h5>Modifier Vol</h5>
+  </div>
+    <div class="form-group"> 
+      <h3>ID:</h3>
+      <input   formControlName="id" class="form-control" value="gfftest" [(ngModel)]="volObj.id">
+    </div>
+    <div class="form-group">
+   <h3> destination:</h3> 
+   <input formControlName="destination" class="form-control" [(ngModel)]="volObj.destination" >
+   </div>
+    <div class="form-group">
+      <h3> depart: </h3>
+      <input formControlName="depart" class="form-control" [(ngModel)]="volObj.depart"> 
+    </div>
+    <div class="form-group"> 
+      <h3>date de depart:</h3>
+      <input formControlName="datedepart" class="form-control" [(ngModel)]="volObj.datedepart "> 
+    </div>
+    <div class="form-group"> 
+      <h3>prix:</h3>
+      <input formControlName="prix" class="form-control" [(ngModel)]="volObj.prix"> 
+    </div>
+    
+    <button (click)="modifier(id.value,form.value)" class="btn btn-success"  >SAVE</button>
+  </form>

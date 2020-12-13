@@ -1,0 +1,30 @@
+<app-accueil></app-accueil>
+
+<table class="table table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col"> ID </th>   
+            <th scope="col"> NAME </th>  
+            <th scope="col"> PASSWORD  </th>  
+            <th scope="col"> EMAIL </th>  
+            <th scope="col"> ROLE</th>
+            <th scope="col"> DELETE</th>
+            <th scope="col"> UPDATE</th>
+          
+        </tr>
+    </thead>
+
+<tbody>
+<tr *ngFor="let user of listUser"  >
+    
+       <td> {{user.id}}</td>
+       <td> {{user.username}}</td>
+       <td> {{user.password}}</td>
+       <td> {{user.email}}</td>
+       <td>  {{user.role}}</td>
+ 
+       <td> <button class="btn btn-danger" (click)="supprimer(user.id)">DELETE</button></td>
+       <td>  <button class="btn btn-warning" (click)="goToModifierUser(user.id)" >Modifier</button></td>
+
+</tbody>
+</table>
